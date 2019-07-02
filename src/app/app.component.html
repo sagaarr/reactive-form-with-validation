@@ -25,6 +25,10 @@
             *ngIf="!SignUpFormGroup.get('email').valid &&
              SignUpFormGroup.get('email').touched"
             class="help-block">Please Enter Valid email</span>
+            <span 
+            *ngIf="!SignUpFormGroup.get('email').valid &&
+             SignUpFormGroup.get('email').touched"
+            class="help-block">Not a Google Account !@!!!!!</span>
         </div>
         <div class="radio" *ngFor="let gender of genders">
           <label>
@@ -34,6 +38,33 @@
               [value]="gender">{{ gender }}
           </label>
         </div>
+                    <!-- Check Password Here -->
+
+        <div class="form-group">
+          <label for="password">password</label>
+        <input
+        type="text"
+        class="form-control"
+        formControlName="password">
+        <span 
+        *ngIf="!SignUpFormGroup.get('password').valid &&
+         SignUpFormGroup.get('password').touched"
+        class="help-block">Check Password again</span>
+       </div>
+       <div class="form-group">
+         <label for="password">password</label>
+          <input
+          type="text"
+          class="form-control"
+          formControlName="confirmPassword">
+          <span 
+          *ngIf="!SignUpFormGroup.get('password').valid &&
+           SignUpFormGroup.get('password').touched"
+          class="help-block">Check Password</span>
+       </div> 
+      
+
+
         <span 
             *ngIf="!SignUpFormGroup.valid &&
              SignUpFormGroup.touched"
